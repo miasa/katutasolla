@@ -1,0 +1,19 @@
+.masonry {
+  --masonry-gutter: 15px;
+  display: flex;
+  margin-left: calc(var(--masonry-gutter) * -1);
+  width: auto;
+
+  @media (min-width: $bp-lg) {
+    --masonry-gutter: 30px;
+  }
+}
+
+.column {
+  padding-left: var(--masonry-gutter);
+  background-clip: padding-box;
+}
+
+.item {
+  margin-bottom: var(--masonry-gutter);
+}

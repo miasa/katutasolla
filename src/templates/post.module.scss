@@ -1,0 +1,29 @@
+.post {
+  @include transition(background-color);
+  background-color: var(--foreground-bg);
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.content {
+  max-width: 620px;
+  width: 85%;
+  padding: 7.5% 0;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 120%;
+  margin: 0 0 40px 0;
+  word-break: break-word;
+
+  @media (min-width: $bp-lg) {
+    font-size: 2rem;
+  }
+}
+
+.description {
+  margin-bottom: 40px;
+}

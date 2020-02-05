@@ -1,0 +1,42 @@
+.navigation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-item {
+  display: block;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  text-transform: uppercase;
+
+  & + & {
+    margin-top: 13px;
+  }
+}
+
+.navigation-link {
+  color: var(--grayscale-contrast-medium);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--grayscale-contrast-high);
+  }
+
+  &--active {
+    color: var(--grayscale-contrast-high);
+
+    &::before {
+      color: var(--primary);
+      content: '×';
+      display: block;
+      font-size: 16px;
+      line-height: 1;
+      margin-right: 10px;
+      position: absolute;
+      right: 100%;
+      top: 2px;
+    }
+  }
+}

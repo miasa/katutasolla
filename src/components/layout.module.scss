@@ -1,0 +1,24 @@
+/*
+.site {
+  @media (min-width: $bp-lg) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+  }
+}
+*/
+
+.content {
+  padding: var(--page-gutter);
+
+  @media (min-width: $bp-lg) {
+    /*// height: 100%;
+    // overflow: auto;*/
+    padding-left: calc(280px + var(--page-gutter));
+  }
+}

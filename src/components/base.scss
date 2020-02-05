@@ -1,0 +1,114 @@
+@import '../styles/settings';
+
+html {
+  // Colors
+  --grayscale-contrast-high: #333; // WCAG 11.28:1: AAA when compared against darker bg
+  --grayscale-contrast-medium: #666; // WCAG 5.12:1: pass AA when compared against darker bg
+  --grayscale-contrast-low: #999; // WCAG 2.54:1: fail
+  --grayscale-contrast-none: #e7e7e7; // WCAG 1.1:1: fail
+  --body-bg: #f2f2f2;
+  --foreground-bg: #fff;
+  --body-text: #000;
+  --primary: #019EBD;
+  // Layout
+  --page-gutter: 15px;
+
+  box-sizing: border-box;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+
+  @media (min-width: $bm-sm) {
+    --page-gutter: 30px;
+  }
+
+  @media (min-width: $bp-lg) {
+    --page-gutter: 40px;
+  }
+}
+
+body.dark {
+  --grayscale-contrast-high: #ccc;
+  --grayscale-contrast-medium: #999;
+  --grayscale-contrast-low: #737373;// #666666;
+  --grayscale-contrast-none: #444;
+  --body-bg: #202124;
+  --foreground-bg: #35363a;
+  --body-text: #ccc;
+  --primary: #019EBD;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: var(--body-bg);
+  color: var(--grayscale-contrast-high);
+  margin: 0;
+  padding: 0;
+  @include transition(color, background-color);
+}
+
+a {
+  @include transition(color);
+  color: var(--primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--grayscale-contrast-medium);
+  }
+}
+
+// Common to listings (category, tag)
+
+.list-title {
+  border-bottom: 2px solid var(--grayscale-contrast-none);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 120%;
+  margin: 9px 0 35px 0;
+  padding-bottom: 10px;
+}
+
+.list-description {
+  margin-bottom: 35px;
+}
+
+// Gatsby specific shit
+
+#___gatsby {
+
+}
+
+#gatsby-focus-wrapper {
+
+}
+
+// Utility classes
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.d-lg-none {
+  @media (min-width: $bp-lg) {
+    display: none !important;
+  }
+}
+
+.d-lg-block {
+  display: none;
+  @media (min-width: $bp-lg) {
+    display: block;
+  }
+}

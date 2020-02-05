@@ -1,0 +1,5 @@
+// Use this file to enable variables, mixins etc sass features to all modules without explicit import
+// Note: this should not output any css, otherwise it is repeated multiple times across the project
+
+@import 'variables';
+@import 'mixins';

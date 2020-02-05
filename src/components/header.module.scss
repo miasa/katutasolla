@@ -1,0 +1,125 @@
+@import '../styles/settings';
+
+.header {
+  @include transition(background-color);
+  background-color: var(--foreground-bg);
+  border-bottom: 1px solid var(--grayscale-contrast-none);
+  font-size: 0.72rem;
+  padding: var(--page-gutter);
+
+  @media (min-width: $bp-lg) {
+    border-bottom: 0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 280px;
+  }
+
+}
+
+.bar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sections {
+  display: none;
+
+  &-menu-open {
+    display: block;
+  }
+
+  @media (min-width: $bp-lg) {
+    display: block !important;
+  }
+}
+
+.section {
+  &::before {
+    @include transition(background-color);
+    background-color: var(--grayscale-contrast-none);
+    content: '';
+    display: block;
+    height: 2px;
+    margin: 35px 0;
+    width: 48px;
+  }
+}
+
+.logo {
+  @include transition(color, background-color);
+  background-color: var(--foreground-bg);
+  border: 3px solid var(--grayscale-contrast-high);
+  color: var(--grayscale-contrast-high);
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 150%;
+  padding: 9px 13px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--grayscale-contrast-high);
+    color: var(--foreground-bg);
+  }
+}
+
+.nav-toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--grayscale-contrast-high);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-weight: 700;
+  justify-content: flex-end;
+  text-transform: uppercase;
+  width: 110px;
+
+  &__burger {
+    align-items: center;
+    display: flex;
+    height: 18px;
+    justify-content: center;
+    margin-left: 0.6rem;
+    overflow: hidden;
+    width: 18px;
+  }
+
+  &__bars {
+    position: relative;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__bar {
+    background: currentColor;
+    border-radius: 2px;
+    height: 2px;
+    margin: 3px auto;
+    transition: all 0.2s ease-in-out;
+    width: 18px;
+  }
+
+  &-menu-open {
+    .nav-toggle__bars {
+      transform: rotate(45deg);
+    }
+
+    .nav-toggle__bar:nth-child(1) {
+      transform: translateY(5px);
+    }
+
+    .nav-toggle__bar:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle__bar:nth-child(3) {
+      transform: translateY(-5px) rotate(90deg);
+    }
+  }
+}

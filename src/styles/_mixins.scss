@@ -1,0 +1,11 @@
+@mixin transition($values...) {
+  $outputTransition: ();
+  $outputWillChange: ();
+  @each $value in $values {
+    $outputTransition: append($outputTransition, $value 200ms ease-in-out, comma);
+    $outputWillChange: append($outputWillChange, $value, comma);
+  }
+
+  transition: $outputTransition;
+  will-change: $outputWillChange;
+}
