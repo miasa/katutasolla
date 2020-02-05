@@ -9,7 +9,9 @@ import styles from './layout.module.scss';
 const Template = (props) => {
   return (
     <>
-      <Helmet>
+      <Helmet htmlAttributes={{
+        lang: 'fi'
+      }}>
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" />
       </Helmet>
       <Header />

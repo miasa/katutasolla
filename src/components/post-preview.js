@@ -12,7 +12,7 @@ export default ({ post }) => {
   return (
     <div className={styles.preview}>
       <Link className={styles.link} to={postLink}>
-        <Img className={styles.image} fluid={post.image.fluid} alt="" />
+        <Img className={styles.image} fluid={post.image.fluid} alt={post.title} />
       </Link>
       <h2 className={styles.title}>
         <Link className={styles.title__link} to={postLink}>{post.title}</Link>

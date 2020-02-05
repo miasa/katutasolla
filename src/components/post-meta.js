@@ -8,7 +8,7 @@ export default ({ post }) => {
     <ul className={styles.meta}>
       <li>
         {post.coordinates 
-          ? (<a href={`https://maps.google.com/maps?q=${post.coordinates.lat},${post.coordinates.lon}`} target="_blank">{post.location}</a>) 
+          ? (<a href={`https://maps.google.com/maps?q=${post.coordinates.lat},${post.coordinates.lon}`} target="_blank" rel="noopener">{post.location}</a>) 
           : (<span>{post.location}</span>)
         }
       </li>
